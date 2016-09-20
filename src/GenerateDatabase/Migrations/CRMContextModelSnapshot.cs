@@ -1,0 +1,228 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+using GenerateDatabase;
+
+namespace GenerateDatabase.Migrations
+{
+    [DbContext(typeof(CRMContext))]
+    partial class CRMContextModelSnapshot : ModelSnapshot
+    {
+        protected override void BuildModel(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("GenerateDatabase.Adress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Burgh")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 120);
+
+                    b.Property<DateTimeOffset>("DtLastUpdate");
+
+                    b.Property<int>("Number");
+
+                    b.Property<string>("StreetName")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 150);
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 9);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Adress");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AdressId");
+
+                    b.Property<string>("DocumentNumber")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 13);
+
+                    b.Property<DateTimeOffset>("DtLastUpdate");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 100);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdressId");
+
+                    b.ToTable("Company");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AdressId");
+
+                    b.Property<DateTimeOffset>("DtLastUpdate");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 80);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 80);
+
+                    b.Property<decimal>("LastOrderAmout");
+
+                    b.Property<bool>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdressId");
+
+                    b.ToTable("Customer");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("Amount");
+
+                    b.Property<int>("CustomerId");
+
+                    b.Property<decimal>("Discount");
+
+                    b.Property<DateTimeOffset>("DtLastUpdate");
+
+                    b.Property<int>("PaymentType");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CompanyId");
+
+                    b.Property<DateTimeOffset>("DtLastUpdate");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 80);
+
+                    b.Property<int?>("OrderId");
+
+                    b.Property<bool>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Stock", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTimeOffset>("DtLastUpdate");
+
+                    b.Property<string>("Name");
+
+                    b.Property<bool>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Stock");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.StockProduct", b =>
+                {
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("StockId");
+
+                    b.Property<int>("Amount");
+
+                    b.HasKey("ProductId", "StockId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("StockId");
+
+                    b.ToTable("StockProduct");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Company", b =>
+                {
+                    b.HasOne("GenerateDatabase.Adress", "Adress")
+                        .WithMany()
+                        .HasForeignKey("AdressId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Customer", b =>
+                {
+                    b.HasOne("GenerateDatabase.Adress", "Adress")
+                        .WithMany()
+                        .HasForeignKey("AdressId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Order", b =>
+                {
+                    b.HasOne("GenerateDatabase.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GenerateDatabase.Product", b =>
+                {
+                    b.HasOne("GenerateDatabase.Company", "Company")
+                        .WithMany("Products")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("GenerateDatabase.Order")
+                        .WithMany("Products")
+                        .HasForeignKey("OrderId");
+                });
+
+            modelBuilder.Entity("GenerateDatabase.StockProduct", b =>
+                {
+                    b.HasOne("GenerateDatabase.Product", "Product")
+                        .WithMany("StockProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("GenerateDatabase.Stock", "Stock")
+                        .WithMany("StockProducts")
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+        }
+    }
+}

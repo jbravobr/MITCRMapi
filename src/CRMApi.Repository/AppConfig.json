@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=MACBOOKPRO\\SQLEXPRESS;Database=myDataBase;User Id=sa;Password=r48xmxdmc44w;"
+  }
+}
