@@ -5,12 +5,6 @@ namespace CRMApi.Domain
 {
     public class Order : BaseEntity
     {
-        public Order()
-        {
-            Products = new HashSet<Product>();
-        }
-
-        [Required]
         public virtual Customer Customer { get; set; }
 
         public int CustomerId { get; set; }
@@ -24,7 +18,6 @@ namespace CRMApi.Domain
         [Required]
         public EnumPaymentType PaymentType { get; set; }
 
-        [Required]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }

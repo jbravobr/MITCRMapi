@@ -8,6 +8,6 @@ namespace GenerateDatabase
 
         public bool Status { get; set; }
 
-        public virtual ICollection<StockProduct> StockProducts { get; set; }
+        public List<StockProduct> StockProducts { get; set; }
     }
 }

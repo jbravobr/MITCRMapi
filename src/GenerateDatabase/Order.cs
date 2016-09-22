@@ -5,12 +5,6 @@ namespace GenerateDatabase
 {
     public class Order : BaseEntity
     {
-        public Order()
-        {
-            Products = new HashSet<Product>();
-        }
-
-        [Required]
         public virtual Customer Customer { get; set; }
 
         public int CustomerId { get; set; }
@@ -24,7 +18,6 @@ namespace GenerateDatabase
         [Required]
         public EnumPaymentType PaymentType { get; set; }
 
-        [Required]
-        public virtual ICollection<Product> Products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

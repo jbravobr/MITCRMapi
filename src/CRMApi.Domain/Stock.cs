@@ -8,6 +8,6 @@ namespace CRMApi.Domain
 
         public bool Status { get; set; }
 
-        public virtual ICollection<StockProduct> StockProducts { get; set; }
+        public virtual List<StockProduct> StockProducts { get; set; }
     }
 }

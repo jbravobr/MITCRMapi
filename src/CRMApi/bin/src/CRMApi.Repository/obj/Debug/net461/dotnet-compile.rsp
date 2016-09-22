@@ -40,6 +40,8 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.Concurrent.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Collections.Immutable\1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.dll
+--reference:C:\Users\Rodrigo\.nuget\packages\System.ComponentModel.Annotations\4.1.0\ref\net461\System.ComponentModel.Annotations.dll
+--reference:C:\Users\Rodrigo\.nuget\packages\System.ComponentModel.Primitives\4.1.0\ref\net45\System.ComponentModel.Primitives.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Console\4.0.0\ref\net46\System.Console.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Debug.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll
@@ -82,6 +84,7 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Timer.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.ReaderWriter.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XDocument.dll
+--reference:C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\bin\src\CRMApi.Domain\bin\Debug\net461\CRMApi.Domain.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll

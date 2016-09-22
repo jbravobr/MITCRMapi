@@ -40,10 +40,11 @@ namespace CRMApi.Controllers
 
             var customer = await _customerService.GetById(id);
 
-            if (c == null)
+            if (customer == null)
                 return NotFound();
 
-            await _customerService.Update(customer);
+            await _customerService.Update(c);
+
             return new NoContentResult();
         }
 
@@ -56,12 +57,12 @@ namespace CRMApi.Controllers
             var op = await _customerService.Insert(customer);
 
             if (op > 0)
-                return CreatedAtRoute("GetCustomerById", new { id = customer.Id }, customer);
+                return CreatedAtRoute("GetCustomer", new { id = customer.Id }, customer);
 
             return BadRequest();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetCustomer")]
         public async Task<IActionResult> GetCustomerById(int id)
         {
             if (id <= 0)
@@ -86,7 +87,7 @@ namespace CRMApi.Controllers
             return new ObjectResult(customers);
         }
 
-        [HttpGet("{predicate}")]
+        [HttpGet("{GetCustomerFiltered}")]
         public async Task<IActionResult> GetCustomerByPredicate([FromBody] Expression<Func<Customer, bool>> predicate)
         {
             if (predicate == null)
@@ -100,7 +101,7 @@ namespace CRMApi.Controllers
             return new ObjectResult(customer);
         }
 
-        [HttpGet("{predicate}")]
+        [HttpGet("{GetAllCustomersFiltered}")]
         public async Task<IActionResult> GetAllCustomersByPredicate([FromBody] Expression<Func<Customer, bool>> predicate)
         {
             if (predicate == null)

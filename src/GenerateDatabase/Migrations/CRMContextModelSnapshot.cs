@@ -16,7 +16,7 @@ namespace GenerateDatabase.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("GenerateDatabase.Adress", b =>
+            modelBuilder.Entity("GenerateDatabase.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -39,7 +39,7 @@ namespace GenerateDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Adress");
+                    b.ToTable("Address");
                 });
 
             modelBuilder.Entity("GenerateDatabase.Company", b =>
@@ -47,7 +47,7 @@ namespace GenerateDatabase.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("AdressId");
+                    b.Property<int>("AddressId");
 
                     b.Property<string>("DocumentNumber")
                         .IsRequired()
@@ -61,7 +61,7 @@ namespace GenerateDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdressId");
+                    b.HasIndex("AddressId");
 
                     b.ToTable("Company");
                 });
@@ -71,7 +71,7 @@ namespace GenerateDatabase.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("AdressId");
+                    b.Property<int?>("AddressId");
 
                     b.Property<DateTimeOffset>("DtLastUpdate");
 
@@ -89,7 +89,7 @@ namespace GenerateDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdressId");
+                    b.HasIndex("AddressId");
 
                     b.ToTable("Customer");
                 });
@@ -160,13 +160,13 @@ namespace GenerateDatabase.Migrations
 
             modelBuilder.Entity("GenerateDatabase.StockProduct", b =>
                 {
-                    b.Property<int>("ProductId");
-
                     b.Property<int>("StockId");
+
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Amount");
 
-                    b.HasKey("ProductId", "StockId");
+                    b.HasKey("StockId", "ProductId");
 
                     b.HasIndex("ProductId");
 
@@ -177,18 +177,17 @@ namespace GenerateDatabase.Migrations
 
             modelBuilder.Entity("GenerateDatabase.Company", b =>
                 {
-                    b.HasOne("GenerateDatabase.Adress", "Adress")
+                    b.HasOne("GenerateDatabase.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AdressId")
+                        .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GenerateDatabase.Customer", b =>
                 {
-                    b.HasOne("GenerateDatabase.Adress", "Adress")
+                    b.HasOne("GenerateDatabase.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AdressId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AddressId");
                 });
 
             modelBuilder.Entity("GenerateDatabase.Order", b =>
@@ -206,7 +205,7 @@ namespace GenerateDatabase.Migrations
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("GenerateDatabase.Order")
+                    b.HasOne("GenerateDatabase.Order", "Order")
                         .WithMany("Products")
                         .HasForeignKey("OrderId");
                 });

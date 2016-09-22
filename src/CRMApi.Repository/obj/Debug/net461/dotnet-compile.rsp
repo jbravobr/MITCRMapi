@@ -12,23 +12,13 @@
 --version:1.0.0.0
 --informational-version:1.0.0
 --target-framework:.NETFramework,Version=v4.6.1
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.AspNetCore.Hosting.Abstractions\1.0.0\lib\net451\Microsoft.AspNetCore.Hosting.Abstractions.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions\1.0.0\lib\net451\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.AspNetCore.Http.Abstractions\1.0.0\lib\net451\Microsoft.AspNetCore.Http.Abstractions.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.AspNetCore.Http.Features\1.0.0\lib\net451\Microsoft.AspNetCore.Http.Features.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore\1.0.0\lib\net451\Microsoft.EntityFrameworkCore.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore.Design.Core\1.0.0-preview2-final\lib\net451\Microsoft.EntityFrameworkCore.Design.Core.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore.Relational\1.0.0\lib\net451\Microsoft.EntityFrameworkCore.Relational.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore.Relational.Design\1.0.0\lib\net451\Microsoft.EntityFrameworkCore.Relational.Design.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore.SqlServer\1.0.0\lib\net451\Microsoft.EntityFrameworkCore.SqlServer.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore.Tools\1.0.0-preview2-final\lib\net451\Microsoft.EntityFrameworkCore.Tools.dll
+--reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore\1.0.1\lib\net451\Microsoft.EntityFrameworkCore.dll
+--reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore.Relational\1.0.1\lib\net451\Microsoft.EntityFrameworkCore.Relational.dll
+--reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.EntityFrameworkCore.SqlServer\1.0.1\lib\net451\Microsoft.EntityFrameworkCore.SqlServer.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.Caching.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.Caching.Memory\1.0.0\lib\net451\Microsoft.Extensions.Caching.Memory.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.CommandLineUtils\1.0.0\lib\net451\Microsoft.Extensions.CommandLineUtils.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
---reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.FileProviders.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.Logging\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.Logging.Abstractions\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\Microsoft.Extensions.Options\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Options.dll
@@ -40,6 +30,8 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.Concurrent.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Collections.Immutable\1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.dll
+--reference:C:\Users\Rodrigo\.nuget\packages\System.ComponentModel.Annotations\4.1.0\ref\net461\System.ComponentModel.Annotations.dll
+--reference:C:\Users\Rodrigo\.nuget\packages\System.ComponentModel.Primitives\4.1.0\ref\net45\System.ComponentModel.Primitives.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Console\4.0.0\ref\net46\System.Console.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Debug.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll
@@ -75,13 +67,13 @@
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Security.Cryptography.X509Certificates\4.1.0\ref\net461\System.Security.Cryptography.X509Certificates.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.Extensions.dll
---reference:C:\Users\Rodrigo\.nuget\packages\System.Text.Encodings.Web\4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.RegularExpressions.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Tasks.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Timer.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.ReaderWriter.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XDocument.dll
+--reference:C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi.Domain\bin\Debug\net461\CRMApi.Domain.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll

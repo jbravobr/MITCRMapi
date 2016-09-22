@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using CRMApi.Domain;
 
 namespace CRMApi.Repository
 {
@@ -12,23 +13,9 @@ namespace CRMApi.Repository
     /// </summary>
     /// <typeparam name="T">Qualquer entidade do domínio</typeparam>
     /// <typeparam name="C">Um Contexto Entity Framework válido</typeparam>
-    public class BaseRepository<T> : IBaseRepository<T> 
-        where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
-        string connectionString = "Server=MACBOOKPRO\\SQLEXPRESS;Database=myDataBase;User Id=sa;Password=r48xmxdmc44w;";
-
-        CRMContext<T> _dbContext;
-        public CRMContext<T> DBContext
-        {
-            get
-            {
-                var builder = new DbContextOptionsBuilder<CRMContext<T>>();
-                builder.UseSqlServer(connectionString);
-
-                return new CRMContext<T>(builder.Options);
-            }
-            set { _dbContext = value; }
-        }
+        public CRMContext DBContext = new CRMContext();
 
         /// <summary>
         /// Deleta um registro.
@@ -38,6 +25,7 @@ namespace CRMApi.Repository
             try
             {
                 DBContext.Set<T>().Remove(TEntity);
+
                 return await DBContext.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -88,7 +76,7 @@ namespace CRMApi.Repository
         {
             try
             {
-                return await DBContext.Set<T>().FirstOrDefaultAsync();
+                return await DBContext.Set<T>().FirstOrDefaultAsync(t => t.Id == Id);
             }
             catch (Exception ex)
             {
@@ -105,7 +93,7 @@ namespace CRMApi.Repository
         {
             try
             {
-                return await DBContext.Set<T>().Where(predicate).FirstOrDefaultAsync();
+                return await DBContext.Set<T>().FirstOrDefaultAsync(predicate);
             }
             catch (Exception ex)
             {
@@ -122,6 +110,7 @@ namespace CRMApi.Repository
             try
             {
                 DBContext.Set<T>().Add(TEntity);
+
                 return await DBContext.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -140,7 +129,8 @@ namespace CRMApi.Repository
             try
             {
                 DBContext.Entry(TEntity).State = EntityState.Modified;
-                 return await DBContext.SaveChangesAsync();
+
+                return await DBContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {

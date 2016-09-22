@@ -8,7 +8,8 @@ namespace GenerateDatabase
 {
     public class CRMContext : DbContext
     {
-        public DbSet<Adress> Adress { get; set; }
+        public DbSet<Address> Address { get; set; }
+
         public DbSet<Company> Company { get; set; }
 
         public DbSet<Customer> Customer { get; set; }
@@ -16,6 +17,7 @@ namespace GenerateDatabase
         public DbSet<Order> Order { get; set; }
 
         public DbSet<Product> Product { get; set; }
+
         public DbSet<Stock> Stock { get; set; }
 
         public DbSet<StockProduct> StockProduct { get; set; }
@@ -23,7 +25,9 @@ namespace GenerateDatabase
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<StockProduct>()
-                .HasKey(c => new { c.ProductId, c.StockId });
+                .HasKey(x => new { x.StockId, x.ProductId });
+
+            base.OnModelCreating(modelBuilder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

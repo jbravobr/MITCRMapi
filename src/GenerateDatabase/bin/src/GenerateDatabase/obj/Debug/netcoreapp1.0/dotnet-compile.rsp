@@ -1,5 +1,5 @@
---temp-output:C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\bin\\src\GenerateDatabase\obj\Debug\netcoreapp1.0\
---out:C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\bin\\src\GenerateDatabase\bin\Debug\netcoreapp1.0\GenerateDatabase.dll
+--temp-output:C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\bin\src\GenerateDatabase\obj\Debug\netcoreapp1.0\
+--out:C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\bin\src\GenerateDatabase\bin\Debug\netcoreapp1.0\GenerateDatabase.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -138,7 +138,7 @@
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Rodrigo\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
-C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Adress.cs
+C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Address.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\BaseEntity.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Company.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\CRMContext.cs
@@ -149,7 +149,7 @@ C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Product.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Program.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Stock.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\StockProduct.cs
-C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Migrations\20160920061541_init.cs
-C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Migrations\20160920061541_init.Designer.cs
+C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Migrations\20160921025605_init_Database.cs
+C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Migrations\20160921025605_init_Database.Designer.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Migrations\CRMContextModelSnapshot.cs
 C:\Projetos\INFNET\MIApp_API\CRMApi\src\GenerateDatabase\Properties\AssemblyInfo.cs
