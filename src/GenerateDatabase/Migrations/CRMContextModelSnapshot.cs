@@ -85,7 +85,11 @@ namespace GenerateDatabase.Migrations
 
                     b.Property<decimal>("LastOrderAmout");
 
+                    b.Property<string>("Password");
+
                     b.Property<bool>("Status");
+
+                    b.Property<string>("UserName");
 
                     b.HasKey("Id");
 

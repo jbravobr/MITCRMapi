@@ -33,7 +33,8 @@ namespace CRMApi.Repository
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=MACBOOKPRO\SQLEXPRESS;Database=CRMAPI;User Id=sa;Password=r48xmxdmc44w;");
+            //optionsBuilder.UseSqlServer(@"Server=MACBOOKPRO\SQLEXPRESS;Database=CRMAPI;User Id=sa;Password=r48xmxdmc44w;");
+            optionsBuilder.UseSqlServer(@"Server=tcp:crmapi.database.windows.net,1433;Initial Catalog=infnetCRMAPI;Persist Security Info=False;User ID=ramaral;Password=r48xmxdmc44wwW;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
     }
 }

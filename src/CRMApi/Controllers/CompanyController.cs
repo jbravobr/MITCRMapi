@@ -88,33 +88,5 @@ namespace CRMApi.Controllers
 
             return new ObjectResult(companys);
         }
-
-        [HttpGet("{GetCompanyFiltered}")]
-        public async Task<IActionResult> GetCompanyByPredicate([FromBody] Expression<Func<Company, bool>> predicate)
-        {
-            if (predicate == null)
-                return BadRequest();
-
-            var company = await _companyService.GetByPredicate(predicate);
-
-            if (company == null)
-                return NotFound();
-
-            return new ObjectResult(company);
-        }
-
-        [HttpGet("{GetAllCompanysFiltered}")]
-        public async Task<IActionResult> GetAllCompanysByPredicate([FromBody] Expression<Func<Company, bool>> predicate)
-        {
-            if (predicate == null)
-                return BadRequest();
-
-            var companys = await _companyService.GetAllWithPredicate(predicate);
-
-            if (companys == null && !companys.Any())
-                return NotFound();
-
-            return new ObjectResult(companys);
-        }
     }
 }

@@ -23,5 +23,9 @@ namespace CRMApi.Domain
         public decimal LastOrderAmout { get; set; }
 
         public virtual List<Order> Orders { get; set; }
+
+        public string Password { get; set; }
+
+        public string Username { get; set; }
     }
 }

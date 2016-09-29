@@ -76,24 +76,16 @@ namespace CRMApi.Controllers
             return new ObjectResult(customer);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAllCustomers()
+        [HttpGet("{username}/{password}")]
+        public async Task<ActionResult> DoLogin(string username, string password)
         {
-            var customers = await _customerService.GetAll();
-
-            if (customers == null && !customers.Any())
-                return NotFound();
-
-            return new ObjectResult(customers);
-        }
-
-        [HttpGet("{GetCustomerFiltered}")]
-        public async Task<IActionResult> GetCustomerByPredicate([FromBody] Expression<Func<Customer, bool>> predicate)
-        {
-            if (predicate == null)
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 return BadRequest();
 
-            var customer = await _customerService.GetByPredicate(predicate);
+            Expression<Func<Customer, bool>> doLogin = (c) => c.Username.ToLower() == username.ToLower()
+                                                                && c.Password == password;
+
+            var customer = await _customerService.GetByPredicate(doLogin);
 
             if (customer == null)
                 return NotFound();
@@ -101,13 +93,10 @@ namespace CRMApi.Controllers
             return new ObjectResult(customer);
         }
 
-        [HttpGet("{GetAllCustomersFiltered}")]
-        public async Task<IActionResult> GetAllCustomersByPredicate([FromBody] Expression<Func<Customer, bool>> predicate)
+        [HttpGet]
+        public async Task<IActionResult> GetAllCustomers()
         {
-            if (predicate == null)
-                return BadRequest();
-
-            var customers = await _customerService.GetAllWithPredicate(predicate);
+            var customers = await _customerService.GetAll();
 
             if (customers == null && !customers.Any())
                 return NotFound();

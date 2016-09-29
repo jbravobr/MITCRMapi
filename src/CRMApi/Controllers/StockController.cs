@@ -88,33 +88,5 @@ namespace CRMApi.Controllers
 
             return new ObjectResult(stocks);
         }
-
-        [HttpGet("{GetStockFiltered}")]
-        public async Task<IActionResult> GetstockByPredicate([FromBody] Expression<Func<Stock, bool>> predicate)
-        {
-            if (predicate == null)
-                return BadRequest();
-
-            var stock = await _stockService.GetByPredicate(predicate);
-
-            if (stock == null)
-                return NotFound();
-
-            return new ObjectResult(stock);
-        }
-
-        [HttpGet("{GetAllStocksFiltered}")]
-        public async Task<IActionResult> GetAllstocksByPredicate([FromBody] Expression<Func<Stock, bool>> predicate)
-        {
-            if (predicate == null)
-                return BadRequest();
-
-            var stocks = await _stockService.GetAllWithPredicate(predicate);
-
-            if (stocks == null && !stocks.Any())
-                return NotFound();
-
-            return new ObjectResult(stocks);
-        }
     }
 }

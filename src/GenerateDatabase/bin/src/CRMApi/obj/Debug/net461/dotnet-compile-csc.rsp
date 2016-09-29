@@ -169,4 +169,8 @@
 "C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\Startup.cs"
 "C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\ApplicationService\BaseApplicationService.cs"
 "C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\ApplicationService\IBaseApplicationService.cs"
+"C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\Controllers\CompanyController.cs"
 "C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\Controllers\CustomerController.cs"
+"C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\Controllers\OrderController.cs"
+"C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\Controllers\ProductController.cs"
+"C:\Projetos\INFNET\MIApp_API\CRMApi\src\CRMApi\Controllers\StockController.cs"
